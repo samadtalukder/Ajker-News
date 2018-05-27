@@ -1,0 +1,206 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/newsCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:cardCornerRadius="5dp"
+            card_view:contentPadding="5dp"
+            card_view:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/newsTitle_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="News Title"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red_l"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp" />
+                    <TextView
+                        android:id="@+id/newsPublishDate_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Published Date"
+                        android:textStyle="bold"
+                        android:textSize="12sp"/>
+                    <TextView
+                        android:id="@+id/newsDescription_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newsPublishDate_1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="News Description"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginStart="5dp" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/newsImage_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/news" />
+
+                    <TextView
+                        android:id="@+id/newsType_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/newsImage_1"
+                        android:layout_alignParentEnd="true"
+                        android:text="Football"
+                        android:background="@color/colorPrimary"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:layout_margin="8dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/newsCardView_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newsCardView"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            card_view:contentPadding="5dp"
+            card_view:cardCornerRadius="5dp"
+            card_view:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/newsImage_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/news" />
+                    <TextView
+                        android:id="@+id/newsType_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/newsImage_2"
+                        android:layout_alignParentEnd="true"
+                        android:text="Football"
+                        android:background="@color/colorPrimary"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:layout_margin="8dp"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/newsTitle_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="News Title"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red_l"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="5dp" />
+                    <TextView
+                        android:id="@+id/newsPublishDate_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Published Date"
+                        android:textStyle="bold"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/newsDescription_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/newsPublishDate_2"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="News Description"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:layout_marginStart="5dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</ScrollView>
