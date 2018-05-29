@@ -1,5 +1,6 @@
 package com.samadtalukder.blognewsapp;
 
+import android.app.ProgressDialog;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         //
     }
     private void loadNewsData() {
+        ProgressDialog pd = new ProgressDialog(MainActivity.this);
+        pd.setMessage("loading");
+        pd.show();
         newsData = new Vector<>();
         NewsModel newsModel = new NewsModel();
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -83,11 +87,11 @@ public class MainActivity extends AppCompatActivity {
 
                     NewsAdapter adapter = new NewsAdapter(this, newsData);
                     newsRecyclerView.setAdapter(adapter);
-                    //nextPage_url = homeSegmentJsonObject.getString("nextPageUrl");
+                    pd.dismiss();
+
                 }
                 else {
                     Toast.makeText(this, "Something went wrong.", Toast.LENGTH_SHORT).show();
-
                 }
             }catch (JSONException e) {
                 System.out.print(e);

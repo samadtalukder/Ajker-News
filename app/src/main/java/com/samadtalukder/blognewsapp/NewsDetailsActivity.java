@@ -21,6 +21,9 @@ public class NewsDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_details);
 
+        getSupportActionBar().setTitle("News Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         headLine = findViewById(R.id.headLineTV);
         body = findViewById(R.id.bodyTV);
         publisheddate = findViewById(R.id.publishedTV);
@@ -29,16 +32,8 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
         headLine.setText(getIntent().getStringExtra("headline"));
         publisheddate.setText(getIntent().getStringExtra("publishedTime"));
-        /*
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-            body.setText(Html.fromHtml(getIntent().getStringExtra("body"),Html.FROM_HTML_MODE_LEGACY));
-        } else {
-            body.setText(getIntent().getStringExtra("body"));
-        }
-        */
         body.setText(getIntent().getStringExtra("body"));
         setImage(getIntent().getStringExtra("image"),imageTeaser);
-
 
         scrollView.fullScroll(ScrollView.FOCUS_UP);
     }
