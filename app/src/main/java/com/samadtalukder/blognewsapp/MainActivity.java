@@ -27,7 +27,7 @@ import java.util.Vector;
 public class MainActivity extends AppCompatActivity {
     private Vector newsData;
     private RecyclerView newsRecyclerView;
-    private String URL = "https://next.json-generator.com/api/json/get/NyOC-E7kS";
+    private String URL = "https://next.json-generator.com/api/json/get/Nkh-4NUkr";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -12,9 +12,9 @@ import com.bumptech.glide.Glide;
 import java.util.Vector;
 
 public class NewsDetailsActivity extends AppCompatActivity {
-    TextView headLine,body;
-    ImageView imageTeaser;
-    ScrollView scrollView;
+    private TextView headLine,body,publisheddate;
+    private ImageView imageTeaser;
+    private ScrollView scrollView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,16 +23,20 @@ public class NewsDetailsActivity extends AppCompatActivity {
 
         headLine = findViewById(R.id.headLineTV);
         body = findViewById(R.id.bodyTV);
+        publisheddate = findViewById(R.id.publishedTV);
         imageTeaser = findViewById(R.id.newsImage);
         scrollView = findViewById(R.id.scrollView);
 
         headLine.setText(getIntent().getStringExtra("headline"));
+        publisheddate.setText(getIntent().getStringExtra("publishedTime"));
+        /*
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             body.setText(Html.fromHtml(getIntent().getStringExtra("body"),Html.FROM_HTML_MODE_LEGACY));
         } else {
             body.setText(getIntent().getStringExtra("body"));
         }
-        //body.setText(getIntent().getStringExtra("body"));
+        */
+        body.setText(getIntent().getStringExtra("body"));
         setImage(getIntent().getStringExtra("image"),imageTeaser);
 
 
