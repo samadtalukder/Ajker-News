@@ -45,6 +45,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             setImage(newsModel.getImage_mobile(),holder.newsImage_1,context);
             holder.newsTitile_1.setText(newsModel.getHeadLine());
             holder.newsDescription_1.setText(newsModel.getBody());
+            holder.newsType_1.setText(newsModel.getNews_type());
+            holder.newsPublishDate_1.setText(newsModel.getPublishedTime());
             holder.news_1.setVisibility(View.VISIBLE);
             holder.news_2.setVisibility(View.GONE);
             item = false;
@@ -52,6 +54,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             setImage(newsModel.getImage_mobile(),holder.newsImage_2,context);
             holder.newsTitile_2.setText(newsModel.getHeadLine());
             holder.newsDescription_2.setText(newsModel.getBody());
+            holder.newsType_2.setText(newsModel.getNews_type());
+            holder.newsPublishDate_2.setText(newsModel.getPublishedTime());
             holder.news_1.setVisibility(View.GONE);
             holder.news_2.setVisibility(View.VISIBLE);
             item = true;
@@ -60,6 +64,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             // Toast.makeText(context, position+" news1", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(context, NewsDetailsActivity.class);
             intent.putExtra("headline", newsModel.getHeadLine());
+            intent.putExtra("publishedTime", newsModel.getPublishedTime());
             intent.putExtra("news_type", newsModel.getNews_type());
             intent.putExtra("image", newsModel.getImage_mobile());
             intent.putExtra("body", newsModel.getBody());
@@ -70,6 +75,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             // Toast.makeText(context, position+" news2", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(context, NewsDetailsActivity.class);
             intent.putExtra("headline", newsModel.getHeadLine());
+            intent.putExtra("publishedTime", newsModel.getPublishedTime());
             intent.putExtra("news_type", newsModel.getNews_type());
             intent.putExtra("image", newsModel.getImage_mobile());
             intent.putExtra("body", newsModel.getBody());
@@ -92,8 +98,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     public class NewsViewHolder extends RecyclerView.ViewHolder {
          CardView news_1,news_2;
-        private TextView newsTitile_1,newsTitile_2;
-        private TextView newsDescription_1,newsDescription_2;
+        private TextView newsTitile_1,newsTitile_2,newsDescription_1,newsDescription_2;
+        private TextView newsPublishDate_1,newsPublishDate_2,newsType_1,newsType_2;
         private ImageView newsImage_1,newsImage_2;
 
         public NewsViewHolder(View itemView) {
@@ -103,12 +109,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
             newsTitile_1 = itemView.findViewById(R.id.newsTitle_1);
             newsTitile_2 = itemView.findViewById(R.id.newsTitle_2);
+            newsDescription_1 = itemView.findViewById(R.id.newsDescription_1);
+            newsDescription_2 = itemView.findViewById(R.id.newsDescription_2);
+
+            newsPublishDate_1 = itemView.findViewById(R.id.newsPublishDate_1);
+            newsPublishDate_2 = itemView.findViewById(R.id.newsPublishDate_2);
+            newsType_1 = itemView.findViewById(R.id.newsType_1);
+            newsType_2 = itemView.findViewById(R.id.newsType_2);
 
             newsImage_1 = itemView.findViewById(R.id.newsImage_1);
             newsImage_2 = itemView.findViewById(R.id.newsImage_2);
 
-            newsDescription_1 = itemView.findViewById(R.id.newsDescription_1);
-            newsDescription_2 = itemView.findViewById(R.id.newsDescription_2);
+
         }
     }
 }
